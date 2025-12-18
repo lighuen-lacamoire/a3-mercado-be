@@ -1,0 +1,7 @@
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}a3mercadoapi
+    container_name: "mercado_backend"
+    build:
+      context: .
+      dockerfile: src/A3.Mercado.API/Dockerfile
