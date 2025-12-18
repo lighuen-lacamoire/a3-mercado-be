@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "d91012a5-0613-4887-97b8-9b85c5068e1e",
+		"name": "A3Mercado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Instruments",
+			"item": [
+				{
+					"name": "Get All",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Instruments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Instruments"
+							],
+							"query": [
+								{
+									"key": "propuestaNro",
+									"value": "35",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

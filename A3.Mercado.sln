@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0646646B-C140-48BC-B8A4-6716A56D6CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A3.Mercado.API", "src\A3.Mercado.API\A3.Mercado.API.csproj", "{56BDB334-7F57-4020-8714-BB902B3FF33D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A3.Mercado.Application", "src\A3.Mercado.Application\A3.Mercado.Application.csproj", "{709238B7-4118-4C03-B065-E1C3BB55DCAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A3.Mercado.Infrastructure", "src\A3.Mercado.Infrastructure\A3.Mercado.Infrastructure.csproj", "{5FC6AE99-B428-4E2A-9751-08F7BBA56146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A3.Mercado.Domain", "src\A3.Mercado.Domain\A3.Mercado.Domain.csproj", "{857CDBC2-7E50-4186-803A-4EA7588A73E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{2B3C08E4-F02F-4772-9440-7B402168DF02}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\00_Base_Creacion.sql = scripts\00_Base_Creacion.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2B289CB0-A30B-4462-9099-6F44F98A328E}"
+	ProjectSection(SolutionItems) = preProject
+		docs\A3Mercado.postman_collection.json = docs\A3Mercado.postman_collection.json
+		docs\A3Mercado.postman_environment.json = docs\A3Mercado.postman_environment.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56BDB334-7F57-4020-8714-BB902B3FF33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BDB334-7F57-4020-8714-BB902B3FF33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BDB334-7F57-4020-8714-BB902B3FF33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BDB334-7F57-4020-8714-BB902B3FF33D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{709238B7-4118-4C03-B065-E1C3BB55DCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709238B7-4118-4C03-B065-E1C3BB55DCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709238B7-4118-4C03-B065-E1C3BB55DCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709238B7-4118-4C03-B065-E1C3BB55DCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC6AE99-B428-4E2A-9751-08F7BBA56146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC6AE99-B428-4E2A-9751-08F7BBA56146}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC6AE99-B428-4E2A-9751-08F7BBA56146}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC6AE99-B428-4E2A-9751-08F7BBA56146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{857CDBC2-7E50-4186-803A-4EA7588A73E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{857CDBC2-7E50-4186-803A-4EA7588A73E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{857CDBC2-7E50-4186-803A-4EA7588A73E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{857CDBC2-7E50-4186-803A-4EA7588A73E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56BDB334-7F57-4020-8714-BB902B3FF33D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{709238B7-4118-4C03-B065-E1C3BB55DCAC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5FC6AE99-B428-4E2A-9751-08F7BBA56146} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{857CDBC2-7E50-4186-803A-4EA7588A73E1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE892F22-E865-4D49-A820-B85F1E0E1695}
+	EndGlobalSection
+EndGlobal
