@@ -10,4 +10,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\A3.Mercado.Infrastructure\A3.Mercado.Infrastructure.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Interfaces\" />
+	</ItemGroup>
 </Project>
