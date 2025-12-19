@@ -6,6 +6,10 @@
 		<ImplicitUsings>disable</ImplicitUsings>
 		<NoWarn>$(NoWarn);1701;1702;CS1591;CS8600;CS8604;CS8603;CS8602;CS8618;CS8767</NoWarn>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<UserSecretsId>5f80c65e-35f4-4a9d-ab1c-e0c77e3e4ae2</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..</DockerfileContext>
+		<DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
 
 	<ItemGroup>

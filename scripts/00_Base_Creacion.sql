@@ -1,8 +1,8 @@
 USE [master]
 GO
 
-DROP DATABASE [MercadoDatabase]
-GO
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'MercadoDatabase')
+BEGIN
 
 CREATE DATABASE [MercadoDatabase]
  CONTAINMENT = NONE
@@ -11,6 +11,7 @@ CREATE DATABASE [MercadoDatabase]
  LOG ON 
 ( NAME = N'MercadoDatabase_log', FILENAME = N'/var/opt/mssql/data/MercadoDatabase_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
  WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+END
 GO
 
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))

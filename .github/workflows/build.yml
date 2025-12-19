@@ -31,7 +31,7 @@ jobs:
           # global-json-file: global.json
 
       - name: Restaurando las dependencias con Nuget
-        run: dotnet restore
+        run: dotnet restore "./src/A3.Mercado.API/A3.Mercado.API.csproj"
 
       - name: Realizando el Build de la API
         # Replace <YourProjectName.csproj> with your actual project file name
