@@ -7,8 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddLLOpenApi(builder.Configuration);
 
+builder.Services.AddCors(options =>
+    options.AddPolicy("AllowAccess_To_API",
+        policy => policy
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+    ));
 var app = builder.Build();
 
+app.UseCors(builder => builder
+   .AllowAnyOrigin()
+   .AllowAnyMethod()
+   .AllowAnyHeader());
 app.UseLLOpenApi();
 
 app.UseAuthorization();
