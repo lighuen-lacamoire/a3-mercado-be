@@ -1,4 +1,4 @@
-﻿using A3.Mercado.Application.Implementations;
+﻿using A3.Mercado.Application.Support.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace A3.Mercado.Application.Support
         public static IServiceCollection AddLLServices(
             this IServiceCollection services)
         {
-            services.AddSingleton<InstrumentPricesWebSocket>();
+            services.AddSingleton<InstrumentPricesManager>();
 
             return services;
         }
