@@ -1,0 +1,38 @@
+name: .NET 8 Build
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+env:
+  BuildConfiguration: "Release"
+
+jobs:
+  build:
+    # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descarga del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalando .NET Core SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          # Specifies the major/minor version (8.0.x installs the latest patch)
+          dotnet-version: "8.x"
+          # Optional: You can also use a global.json file to manage the version
+          # global-json-file: global.json
+
+      - name: Restaurando las dependencias con Nuget
+        run: dotnet restore "./src/A3.Mercado.API/A3.Mercado.API.csproj"
+
+      - name: Realizando el Build de la API
+        # Replace <YourProjectName.csproj> with your actual project file name
+        run: dotnet build ./src/A3.Mercado.API/A3.Mercado.API.csproj --no-restore -c:${{ env.BuildConfiguration }}

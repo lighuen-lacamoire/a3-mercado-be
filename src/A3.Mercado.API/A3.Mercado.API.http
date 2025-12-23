@@ -1,0 +1,6 @@
+@A3.Mercado.API_HostAddress = http://localhost:5261
+
+GET {{A3.Mercado.API_HostAddress}}/api/instruments/
+Accept: application/json
+
+###

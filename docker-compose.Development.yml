@@ -1,0 +1,53 @@
+services:
+  sql-init:
+    image: mcr.microsoft.com/mssql-tools:latest
+    container_name: sql-init
+    depends_on:
+      - sqldb
+    volumes:
+      - ./scripts/00_Base_Creacion.sql:/scripts/00_Base_Creacion.sql
+    command: >
+      /opt/mssql-tools/bin/sqlcmd
+      -S mercado-mssql 
+      -U SA 
+      -P SuperSecretPassword#1 
+      -d master -i /scripts/00_Base_Creacion.sql
+    restart: "no"
+
+  sqldb:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: "mercado_db"
+    hostname: mercado-mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=SuperSecretPassword#1
+    ports:
+      - "1433:1433"
+    volumes:
+      - mercado_sqldata:/var/opt/mssql
+  api:
+    image: ${DOCKER_REGISTRY-}a3mercadoapi
+    container_name: "mercado_backend"
+    build:
+      context: .
+      dockerfile: src/A3.Mercado.API/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - "ConnectionStrings__MainDb=Server=sqldb,1433;Database=MercadoDatabase;User Id=SA;Password=SuperSecretPassword#1;TrustServerCertificate=True; Encrypt=false;"
+    ports:
+      - "5261:8080"
+      - "7232:8081"
+    volumes:
+      - .:/app
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+volumes:
+  mercado_sqldata:
+    external: false
+#Comando para levantarlo en docker
+#docker compose -f docker-compose.Development.yml up -d --build --force-recreate
